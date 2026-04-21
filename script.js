@@ -36,7 +36,7 @@
                 { stdout: '  <span class="ok">Ozon · Avito · Cloud.ru · СберТех · Альфа-Банк</span>' },
                 { stdout: '  <span class="ok">Т-Банк · Timeweb Cloud · Autoteka · MaxPoster</span>' },
                 { stdout: "" },
-                { stdout: "Международные программы:" },
+                { stdout: "Международные проекты:" },
                 { stdout: '  <span class="info">Neon · Zooplus</span>' },
                 { stdout: "" },
                 { stdout: "Классы: Android-мобильные, SSO (ADFS, Keycloak), API (Strapi," },
