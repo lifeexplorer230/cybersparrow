@@ -5,32 +5,64 @@
     const SCREEN = document.getElementById("screen");
     const PREFERS_REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // Content blocks — terminal-style. Text is placeholder; Roman edits copy after build.
+    // Content blocks — terminal-style. Finalized 2026-04-21 per
+    // evidence/alfacapital/osint_2026-04-21/PROPOSAL_GENERIC.md.
     const BLOCKS = [
         {
             lines: [
                 { prompt: "cybersparrow --help" },
-                { stdout: "Cyber Sparrow — security research engagement" },
-                { stdout: "Основатель: Roman Воробьёв + AI-ассистент" },
+                { stdout: "Cyber Sparrow — исследование безопасности" },
+                { stdout: "AI-ассистированная разведка уязвимостей под частный периметр" },
             ],
         },
         {
             lines: [
-                { prompt: "cybersparrow status --last-month" },
-                { stdout: "Confirmed vulnerabilities at:" },
-                { stdout: "  Ozon · Avito · Cloud.ru · СберТех · Альфа-Банк" },
-                { stdout: "  Т-Банк · Timeweb · Wildberries · Autoteka · MaxPoster" },
-                { stdout: "  Ренессанс Жизнь" },
-                { stdout: "International: Neon · Zooplus" },
+                { prompt: "cybersparrow who" },
+                { stdout: "Роман Воробьёв — исследователь в области прикладной безопасности." },
+                { stdout: "" },
+                { stdout: "Cyber Sparrow — AI-ассистент на корпусе публичных отчётов," },
+                { stdout: "методологий рецензирования и внутренней библиотеке правил" },
+                { stdout: '(<span class="info">1500+ эвристик</span>, привязанных к подтверждённым находкам).' },
+                { stdout: "" },
+                { stdout: "Один исследователь с мультипликатором в лице AI:" },
+                { stdout: "параллельная разведка на тысячах конечных точек + вся rule-база" },
+                { stdout: "в памяти при генерации гипотез." },
+            ],
+        },
+        {
+            lines: [
+                { prompt: "cybersparrow results --track-record" },
+                { stdout: "Подтверждённые уязвимости в российских компаниях:" },
+                { stdout: '  <span class="ok">Ozon · Avito · Cloud.ru · СберТех · Альфа-Банк</span>' },
+                { stdout: '  <span class="ok">Т-Банк · Timeweb Cloud · Autoteka · MaxPoster</span>' },
+                { stdout: "" },
+                { stdout: "Международные программы:" },
+                { stdout: '  <span class="info">Neon · Zooplus</span>' },
+                { stdout: "" },
+                { stdout: "Классы: Android-мобильные, SSO (ADFS, Keycloak), API (Strapi," },
+                { stdout: "GraphQL), контроль доступа, захват поддоменов, SSRF в IdP." },
             ],
         },
         {
             lines: [
                 { prompt: "cybersparrow pipeline" },
-                { stdout: '<span class="info">phase 1</span> recon           → subdomains, endpoints, tech fingerprint' },
-                { stdout: '<span class="info">phase 2</span> hypotheses      → 1500+ rules matched, prioritized by EV' },
-                { stdout: '<span class="info">phase 3</span> validate        → runtime confirmation gate, no theory' },
-                { stdout: '<span class="info">phase 4</span> report          → CVSS 3.0, PoC, remediation' },
+                { stdout: '<span class="info">этап 1</span> разведка    → поддомены (CT, DNS, crawling), endpoints,' },
+                { stdout: "                 JS-бандлы, API-спеки, порты, тех. стек," },
+                { stdout: "                 CVE-match, SRI, SBOM, expired domains," },
+                { stdout: "                 SSO/OAuth flow, redirect_uri, trust chains" },
+                { stdout: "" },
+                { stdout: '<span class="info">этап 2</span> гипотезы    → match поверхности с библиотекой (30+ категорий:' },
+                { stdout: "                 IDOR, access control, injections, бизнес-логика," },
+                { stdout: "                 SSRF, XSS, crypto, supply chain, race conditions)" },
+                { stdout: "                 → приоритизация по ожидаемой ценности" },
+                { stdout: "" },
+                { stdout: '<span class="info">этап 3</span> валидация   → реальная эксплуатация с rate-limit гигиеной' },
+                { stdout: "                 → шлюз подтверждения: без observed impact в отчёт" },
+                { stdout: "                 не идёт. Никаких теоретических уязвимостей." },
+                { stdout: "" },
+                { stdout: '<span class="info">этап 4</span> отчёт       → per-finding: CVSS 3.0, curl-evidence," },
+                { stdout: "                 screenshots, PoC скрипт, business impact," },
+                { stdout: "                 рекомендации. + executive summary top-5." },
             ],
         },
         {
@@ -41,9 +73,29 @@
         },
         {
             lines: [
+                { prompt: "cybersparrow timeline" },
+                { stdout: "Полный охват публичной поверхности: 1-2 недели" },
+                { stdout: "с момента подписания документов и передачи доступов." },
+                { stdout: "Точный срок зависит от размера периметра." },
+            ],
+        },
+        {
+            lines: [
                 { prompt: "cybersparrow pricing" },
-                { stdout: "Base rate + bonus per confirmed finding." },
-                { stdout: "Exact quote per project (perimeter size defines scope)." },
+                { stdout: "Гибридная модель:" },
+                { stdout: '  <span class="ok">Базовая ставка на старте</span> — покрывает подготовку конвейера' },
+                { stdout: "    (разведка, гипотезы, AI-токены на валидацию)." },
+                { stdout: "    Зависит от объёма поверхности." },
+                { stdout: "" },
+                { stdout: '  <span class="ok">Бонус за каждую подтверждённую находку</span> — по градации CVSS.' },
+                { stdout: "    Конкретные суммы зависят от крупности компании" },
+                { stdout: "    и потенциального ущерба." },
+                { stdout: "" },
+                { stdout: '  <span class="muted">Ничего не нашли → платите только стартовую ставку.</span>' },
+                { stdout: '  <span class="muted">Нашли → по согласованной сетке.</span>' },
+                { stdout: "" },
+                { stdout: "Точные цифры согласуются в проекте договора" },
+                { stdout: "после предварительной оценки вашего периметра." },
             ],
         },
         {
@@ -51,28 +103,32 @@
                 { prompt: "cybersparrow requirements" },
                 {
                     html: `<ul class="checklist">
-<li>2× retail test accounts</li>
-<li>2× B2B test accounts (if applicable)</li>
-<li>Scope document</li>
-<li>Contact person</li>
+<li><b>Договор на проведение исследования безопасности</b> — активы в границах / вне границ / исключения</li>
+<li><b>2 × аккаунта рядового клиента</b> (физ. лица)</li>
+<li><b>2 × аккаунта B2B-уровня</b> (если есть B2B-периметр)</li>
+<li><b>Контактное лицо</b> на время работы — для критических находок</li>
 </ul>`,
                 },
+                { stdout: "" },
+                { stdout: '<span class="muted">Опционально — углублённый аудит разграничения ролей:</span>' },
+                { stdout: '<span class="muted">один аккаунт с расширенными правами (менеджер/админ).</span>' },
             ],
         },
         {
             lines: [
                 { prompt: "cybersparrow contact" },
+                { stdout: '<span class="muted"># Хотите обсудить исследование для вашего периметра?</span>' },
             ],
             form: true,
         },
     ];
 
     const SEVERITY = [
-        ["sev-crit", "Critical", "9.0–10.0", "RCE, data breach, account takeover"],
-        ["sev-high", "High", "7.0–8.9", "Targeted ATO, PII access, privesc"],
-        ["sev-med", "Medium", "4.0–6.9", "SSRF, info leak, weak crypto"],
-        ["sev-low", "Low", "0.1–3.9", "Missing SRI, weak headers"],
-        ["sev-info", "Info", "—", "Best-practice notes"],
+        ["sev-crit", "Critical", "9.0–10.0", "RCE, массовая утечка, захват аккаунта, хищение средств"],
+        ["sev-high", "High", "7.0–8.9", "ATO с min взаимодействием, PII, privesc между ролями"],
+        ["sev-med", "Medium", "4.0–6.9", "SSRF внутр. сеть, ограниченное раскрытие, CSRF"],
+        ["sev-low", "Low", "0.1–3.9", "Отсутствие SRI, слабые headers, подробные ошибки"],
+        ["sev-info", "Info", "—", "Best-practice замечания для полноты отчёта"],
     ];
 
     // Sound ------------------------------------------------------------------
