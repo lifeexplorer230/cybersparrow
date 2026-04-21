@@ -125,10 +125,11 @@
             lines: [
                 { prompt: "cybersparrow whoami" },
                 { html: `<div class="company-info">
-<span class="muted"># реквизиты</span>
-<span class="muted"># ИП <!-- TODO: fill from Roman --></span>
-<span class="muted"># ИНН <!-- TODO --></span>
-<span class="muted"># ОГРНИП <!-- TODO --></span>
+<span class="muted"># ИП Воробьёв Роман Юрьевич</span>
+<span class="muted"># ИНН 771470569873</span>
+<span class="muted"># Банк: Московский филиал АО КБ «Модульбанк»</span>
+<span class="muted"># БИК 044525092 · к/с 30101810645250000092</span>
+<span class="muted"># р/с 40802810270010344227</span>
 <span class="muted"># Telegram <span class="info">@LifeExplorer23</span></span>
 </div>` },
             ],
