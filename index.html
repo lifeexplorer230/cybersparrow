@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyber Sparrow — security research</title>
+    <meta name="description" content="Targeted vulnerability discovery for Russian and international companies. Confirmed findings at Ozon, Avito, Cloud.ru, SberTech. Contact us for engagement quote.">
+    <meta property="og:title" content="Cyber Sparrow — security research">
+    <meta property="og:description" content="Targeted vulnerability discovery. Confirmed findings at major Russian tech. Quote per project.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="terminal" role="main">
+        <header class="topbar" aria-hidden="true">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="title">cybersparrow — ~/</span>
+        </header>
+
+        <div class="toggles" aria-label="controls">
+            <button class="toggle" data-action="replay" type="button" title="Replay animation">↻ replay</button>
+            <button class="toggle" data-action="skip" type="button" title="Skip animation">⏭ skip</button>
+            <button class="toggle" data-action="sound" type="button" aria-pressed="false" title="Toggle typing sound">🔇 sound</button>
+        </div>
+
+        <section class="screen" id="screen" aria-live="polite" aria-label="terminal output"></section>
+
+        <noscript>
+            <div class="noscript">
+                <p>JavaScript отключён. Включите JS для анимированной версии, или прочтите текст ниже:</p>
+                <pre id="fallback-content">$ cybersparrow --help
+
+Cyber Sparrow — security research engagement.
+Targeted vulnerability discovery for Russian and international tech.
+
+Confirmed findings at: Ozon, Avito, Cloud.ru, СберТех, Альфа-Банк,
+Т-Банк, Timeweb, Wildberries, Autoteka, Ренессанс Жизнь, MaxPoster.
+International: Neon, Zooplus.
+
+Contact: hello@cybersparrow.tech</pre>
+            </div>
+        </noscript>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
