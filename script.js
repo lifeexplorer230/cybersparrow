@@ -60,7 +60,7 @@
                 { stdout: "                 → шлюз подтверждения: без observed impact в отчёт" },
                 { stdout: "                 не идёт. Никаких теоретических уязвимостей." },
                 { stdout: "" },
-                { stdout: '<span class="info">этап 4</span> отчёт       → per-finding: CVSS 3.0, curl-evidence," },
+                { stdout: '<span class="info">этап 4</span> отчёт       → per-finding: CVSS 3.0, curl-evidence,' },
                 { stdout: "                 screenshots, PoC скрипт, business impact," },
                 { stdout: "                 рекомендации. + executive summary top-5." },
             ],
