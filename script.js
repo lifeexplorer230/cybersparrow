@@ -117,9 +117,21 @@
         {
             lines: [
                 { prompt: "cybersparrow contact" },
-                { stdout: '<span class="muted"># Хотите обсудить исследование для вашего периметра?</span>' },
+                { stdout: '<span class="muted"># Обсудить исследование для вашего периметра — напишите в Telegram.</span>' },
+                { html: `<a class="tg-btn" href="https://t.me/LifeExplorer23?text=${encodeURIComponent('Здравствуйте! Интересует исследование безопасности Cyber Sparrow.')}" target="_blank" rel="noopener">📨 Написать в Telegram →</a>` },
             ],
-            form: true,
+        },
+        {
+            lines: [
+                { prompt: "cybersparrow whoami" },
+                { html: `<div class="company-info">
+<span class="muted"># реквизиты</span>
+<span class="muted"># ИП <!-- TODO: fill from Roman --></span>
+<span class="muted"># ИНН <!-- TODO --></span>
+<span class="muted"># ОГРНИП <!-- TODO --></span>
+<span class="muted"># Telegram <span class="info">@LifeExplorer23</span></span>
+</div>` },
+            ],
         },
     ];
 

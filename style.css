@@ -282,6 +282,41 @@ body {
 
 .form-status.error { color: var(--accent-red); }
 
+/* Telegram button (replaces form MVP) */
+.tg-btn {
+    display: inline-block;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    background: rgba(92, 207, 230, 0.08);
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 12px 0 8px 16px;
+    transition: background 120ms, transform 120ms;
+}
+
+.tg-btn:hover, .tg-btn:focus-visible {
+    background: rgba(92, 207, 230, 0.18);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* Company info / reqisites footer block */
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 8px;
+    margin-left: 16px;
+    font-size: 13px;
+    color: var(--fg-dim);
+    border-top: 1px dashed var(--border);
+    padding-top: 10px;
+}
+
 /* noscript fallback */
 .noscript {
     padding: 24px;
