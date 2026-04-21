@@ -326,7 +326,7 @@
         else if (action === "sound") toggleSound(btn);
     });
 
-    // Kick off ---------------------------------------------------------------
-    document.addEventListener("DOMContentLoaded", runSequence);
-    if (document.readyState !== "loading") runSequence();
+    // Kick off — script has `defer`, so DOM is parsed when this runs.
+    // Fire once; no DOMContentLoaded listener (would double-fire).
+    runSequence();
 })();
